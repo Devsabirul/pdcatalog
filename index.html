@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LUXE — Product Catalog</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
     <style>
       :root {
         --black: #0f0f0f;
@@ -24,22 +21,11 @@
         --font-body: "DM Sans", sans-serif;
         --radius: 10px;
         --radius-sm: 6px;
-        --shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-        --shadow-md: 0 4px 28px rgba(0, 0, 0, 0.12);
+        --shadow: 0 2px 16px rgba(0,0,0,0.06);
+        --shadow-md: 0 4px 28px rgba(0,0,0,0.12);
       }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family: var(--font-body);
-        background: var(--cream);
-        color: var(--black);
-        min-height: 100vh;
-      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: var(--font-body); background: var(--cream); color: var(--black); min-height: 100vh; }
 
       /* HEADER */
       header {
@@ -52,498 +38,245 @@
         position: sticky;
         top: 0;
         z-index: 50;
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 2px 20px rgba(0,0,0,0.3);
       }
-      .logo {
-        font-family: var(--font-display);
-        font-size: 1.7rem;
-        font-weight: 700;
-        color: var(--gold);
-        letter-spacing: 3px;
-      }
-      .logo small {
-        display: block;
-        font-family: var(--font-body);
-        font-size: 0.6rem;
-        letter-spacing: 5px;
-        color: rgba(255, 255, 255, 0.35);
-        font-weight: 400;
-        margin-top: -2px;
-      }
-      .header-count {
-        font-size: 0.78rem;
-        color: rgba(255, 255, 255, 0.4);
-        letter-spacing: 1px;
-      }
-      .header-count span {
-        color: var(--gold);
-        font-weight: 600;
-      }
+      .logo { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; color: var(--gold); letter-spacing: 3px; }
+      .logo small { display: block; font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 5px; color: rgba(255,255,255,0.35); font-weight: 400; margin-top: -2px; }
+      .header-count { font-size: 0.78rem; color: rgba(255,255,255,0.4); letter-spacing: 1px; }
+      .header-count span { color: var(--gold); font-weight: 600; }
 
       /* MAIN */
-      .main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 32px 24px;
-      }
+      .main { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
 
       /* TOOLBAR */
-      .toolbar {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        margin-bottom: 28px;
-      }
+      .toolbar { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
       .search-wrap {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background: var(--white);
-        border: 1.5px solid var(--gray-200);
-        border-radius: var(--radius);
-        padding: 12px 18px;
-        box-shadow: var(--shadow);
-        transition: border-color 0.2s;
+        display: flex; align-items: center; gap: 10px;
+        background: var(--white); border: 1.5px solid var(--gray-200);
+        border-radius: var(--radius); padding: 12px 18px;
+        box-shadow: var(--shadow); transition: border-color 0.2s;
       }
-      .search-wrap:focus-within {
-        border-color: var(--gold);
-        box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
-      }
-      .search-wrap svg {
-        flex-shrink: 0;
-        color: var(--gray-400);
-      }
-      .search-wrap input {
-        flex: 1;
-        border: none;
-        background: none;
-        font-family: var(--font-body);
-        font-size: 0.92rem;
-        color: var(--black);
-        outline: none;
-      }
-      .search-wrap input::placeholder {
-        color: var(--gray-400);
-      }
-      .search-clear {
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--gray-400);
-        font-size: 1rem;
-        padding: 2px;
-        display: none;
-      }
-      .search-clear.visible {
-        display: block;
-      }
-      .filter-bar {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-      }
+      .search-wrap:focus-within { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+      .search-wrap svg { flex-shrink: 0; color: var(--gray-400); }
+      .search-wrap input { flex: 1; border: none; background: none; font-family: var(--font-body); font-size: 0.92rem; color: var(--black); outline: none; }
+      .search-wrap input::placeholder { color: var(--gray-400); }
+      .search-clear { background: none; border: none; cursor: pointer; color: var(--gray-400); font-size: 1rem; padding: 2px; display: none; }
+      .search-clear.visible { display: block; }
+      .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; }
       .filter-chip {
-        background: var(--white);
-        border: 1.5px solid var(--gray-200);
-        border-radius: 30px;
-        padding: 6px 18px;
-        font-family: var(--font-body);
-        font-size: 0.78rem;
-        font-weight: 600;
-        color: var(--gray-600);
-        cursor: pointer;
-        transition: all 0.18s;
+        background: var(--white); border: 1.5px solid var(--gray-200);
+        border-radius: 30px; padding: 6px 18px;
+        font-family: var(--font-body); font-size: 0.78rem; font-weight: 600;
+        color: var(--gray-600); cursor: pointer; transition: all 0.18s;
       }
-      .filter-chip:hover {
-        border-color: var(--gold);
-        color: var(--gold);
-      }
-      .filter-chip.active {
-        background: var(--black);
-        border-color: var(--black);
-        color: var(--white);
-      }
+      .filter-chip:hover { border-color: var(--gold); color: var(--gold); }
+      .filter-chip.active { background: var(--black); border-color: var(--black); color: var(--white); }
 
       /* GRID */
-      .products-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 20px;
-      }
+      .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
 
       /* CARD */
       .product-card {
-        background: var(--white);
-        border-radius: var(--radius);
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s;
-        animation: fadeUp 0.35s ease both;
-        cursor: pointer;
+        background: var(--white); border-radius: var(--radius);
+        overflow: hidden; box-shadow: var(--shadow);
+        transition: transform 0.2s, box-shadow 0.2s;
+        animation: fadeUp 0.35s ease both; cursor: pointer;
       }
-      .product-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-md);
-      }
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(14px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .card-img-wrap {
-        overflow: hidden;
-      }
-      .card-img {
-        width: 100%;
-        height: 210px;
-        object-fit: cover;
-        display: block;
-        background: var(--gray-100);
-        transition: transform 0.3s;
-      }
-      .product-card:hover .card-img {
-        transform: scale(1.04);
-      }
-      .card-img-placeholder {
-        width: 100%;
-        height: 210px;
-        background: var(--gray-100);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2.5rem;
-        color: var(--gray-400);
-      }
-      .card-body {
-        padding: 14px;
-      }
-      .card-category {
-        font-size: 0.66rem;
-        font-weight: 700;
-        letter-spacing: 1.8px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 4px;
-      }
-      .card-name {
-        font-family: var(--font-display);
-        font-size: 1.05rem;
-        font-weight: 600;
-        line-height: 1.3;
-        color: var(--black);
-        margin-bottom: 4px;
-      }
-      .card-id {
-        font-family: "Courier New", monospace;
-        font-size: 0.72rem;
-        color: var(--gray-400);
-        margin-bottom: 10px;
-      }
-      .card-sizes {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
-        margin-bottom: 12px;
-      }
-      .size-pill {
-        background: var(--cream);
-        border: 1px solid var(--gray-200);
-        border-radius: 4px;
-        font-size: 0.68rem;
-        font-weight: 600;
-        padding: 2px 8px;
-        color: var(--gray-600);
-      }
-      .copy-btn {
-        width: 100%;
-        background: var(--cream);
-        border: 1.5px solid var(--gray-200);
-        border-radius: var(--radius-sm);
-        padding: 9px;
-        font-family: var(--font-body);
-        font-size: 0.76rem;
-        font-weight: 600;
-        color: var(--black);
-        cursor: pointer;
-        transition: all 0.18s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-      }
-      .copy-btn:hover {
-        background: var(--black);
-        color: var(--white);
-        border-color: var(--black);
-      }
-      .copy-btn.copied {
-        background: var(--success);
-        color: white;
-        border-color: var(--success);
+      .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+      /* CARD IMAGE — supports gallery */
+      .card-gallery { position: relative; overflow: hidden; height: 210px; background: var(--gray-100); }
+      .card-gallery-track { display: flex; height: 100%; transition: transform 0.32s cubic-bezier(0.4,0,0.2,1); }
+      .card-gallery-slide { min-width: 100%; height: 100%; flex-shrink: 0; }
+      .card-gallery-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+      .product-card:hover .card-gallery-slide img { transform: scale(1.04); }
+      .card-gallery-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--gray-400); }
+      /* Mini dots on card */
+      .card-dots { position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; z-index: 2; }
+      .card-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.5); border: none; padding: 0; cursor: pointer; transition: background 0.18s; }
+      .card-dot.active { background: #fff; }
+      /* Photo count badge */
+      .card-img-count {
+        position: absolute; top: 8px; right: 8px;
+        background: rgba(0,0,0,0.55); color: #fff;
+        font-size: 0.65rem; font-weight: 600;
+        padding: 2px 7px; border-radius: 10px; z-index: 2;
+        display: flex; align-items: center; gap: 4px;
       }
 
-      /* VIEWER */
+      .card-body { padding: 14px; }
+      .card-category { font-size: 0.66rem; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+      .card-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; line-height: 1.3; color: var(--black); margin-bottom: 4px; }
+      .card-id { font-family: "Courier New", monospace; font-size: 0.72rem; color: var(--gray-400); margin-bottom: 10px; }
+      .card-price { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--black); margin-bottom: 8px; }
+      .card-sizes { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+      .size-pill { background: var(--cream); border: 1px solid var(--gray-200); border-radius: 4px; font-size: 0.68rem; font-weight: 600; padding: 2px 8px; color: var(--gray-600); }
+      .copy-btn {
+        width: 100%; background: var(--cream); border: 1.5px solid var(--gray-200);
+        border-radius: var(--radius-sm); padding: 9px;
+        font-family: var(--font-body); font-size: 0.76rem; font-weight: 600;
+        color: var(--black); cursor: pointer; transition: all 0.18s;
+        display: flex; align-items: center; justify-content: center; gap: 6px;
+      }
+      .copy-btn:hover { background: var(--black); color: var(--white); border-color: var(--black); }
+      .copy-btn.copied { background: var(--success); color: white; border-color: var(--success); }
+
+      /* ═══════════════════════════════════════════════
+         VIEWER OVERLAY — full multi-image gallery
+      ═══════════════════════════════════════════════ */
       .viewer-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.9);
-        z-index: 200;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.25s;
+        position: fixed; inset: 0; background: rgba(0,0,0,0.92);
+        z-index: 200; display: flex; align-items: center; justify-content: center;
+        padding: 0; opacity: 0; pointer-events: none; transition: opacity 0.28s;
       }
-      .viewer-overlay.open {
-        opacity: 1;
-        pointer-events: all;
-      }
+      .viewer-overlay.open { opacity: 1; pointer-events: all; }
+
       .viewer-close {
-        position: fixed;
-        top: 16px;
-        right: 20px;
-        background: rgba(255, 255, 255, 0.12);
-        border: none;
-        color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        font-size: 1.1rem;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.18s;
-        z-index: 201;
+        position: fixed; top: 16px; right: 20px;
+        background: rgba(255,255,255,0.12); border: none; color: white;
+        width: 42px; height: 42px; border-radius: 50%; font-size: 1.1rem;
+        cursor: pointer; display: flex; align-items: center; justify-content: center;
+        transition: background 0.18s; z-index: 210;
       }
-      .viewer-close:hover {
-        background: rgba(255, 255, 255, 0.25);
-      }
+      .viewer-close:hover { background: rgba(255,255,255,0.25); }
+
       .viewer-box {
-        background: var(--white);
-        border-radius: var(--radius);
-        overflow: hidden;
-        display: flex;
-        max-width: 860px;
-        width: 100%;
-        max-height: 88vh;
-        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
-        transform: scale(0.94) translateY(12px);
-        transition: transform 0.25s;
+        background: var(--white); border-radius: var(--radius);
+        overflow: hidden; display: flex;
+        max-width: 920px; width: calc(100% - 40px);
+        max-height: 90vh;
+        box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+        transform: scale(0.94) translateY(14px);
+        transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1);
       }
-      .viewer-overlay.open .viewer-box {
-        transform: scale(1) translateY(0);
+      .viewer-overlay.open .viewer-box { transform: scale(1) translateY(0); }
+
+      /* LEFT — image gallery panel */
+      .viewer-gallery {
+        width: 55%; flex-shrink: 0;
+        display: flex; flex-direction: column;
+        background: #111; position: relative; overflow: hidden;
       }
-      .viewer-img {
-        width: 55%;
-        object-fit: contain;
-        display: block;
-        background: var(--gray-100);
+
+      /* Main big image */
+      .viewer-main-img-wrap {
+        flex: 1; position: relative; overflow: hidden;
+        display: flex; align-items: center; justify-content: center;
+        min-height: 0;
+      }
+      .viewer-main-img {
+        width: 100%; height: 100%; object-fit: contain;
+        display: block; transition: opacity 0.22s, transform 0.22s;
+      }
+      .viewer-main-img.switching { opacity: 0; transform: scale(0.96); }
+
+      /* Prev / Next arrows */
+      .viewer-arr {
+        position: absolute; top: 50%; transform: translateY(-50%);
+        background: rgba(255,255,255,0.12); border: none; color: #fff;
+        width: 38px; height: 38px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1rem; cursor: pointer; transition: background 0.18s; z-index: 5;
+      }
+      .viewer-arr:hover { background: rgba(255,255,255,0.3); }
+      .viewer-arr-prev { left: 12px; }
+      .viewer-arr-next { right: 12px; }
+      .viewer-arr[hidden] { display: none; }
+
+      /* Image counter */
+      .viewer-img-counter {
+        position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+        background: rgba(0,0,0,0.55); color: #fff;
+        font-size: 0.72rem; font-weight: 600;
+        padding: 3px 10px; border-radius: 10px;
+        z-index: 5; letter-spacing: 0.5px;
+      }
+
+      /* Thumbnail strip */
+      .viewer-thumbs {
+        display: flex; gap: 6px; padding: 10px 12px;
+        background: #0a0a0a; overflow-x: auto;
+        scrollbar-width: thin; scrollbar-color: rgba(201,168,76,0.4) transparent;
         flex-shrink: 0;
       }
+      .viewer-thumbs::-webkit-scrollbar { height: 3px; }
+      .viewer-thumbs::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.4); border-radius: 2px; }
+      .viewer-thumb {
+        flex-shrink: 0; width: 58px; height: 66px;
+        border-radius: 5px; overflow: hidden;
+        border: 2px solid transparent;
+        cursor: pointer; transition: border-color 0.18s, transform 0.18s;
+        opacity: 0.6; transition: all 0.18s;
+      }
+      .viewer-thumb:hover { opacity: 0.85; transform: scale(1.05); }
+      .viewer-thumb.active { border-color: var(--gold); opacity: 1; }
+      .viewer-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+      /* RIGHT — info panel */
       .viewer-info {
-        padding: 32px 28px;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        overflow-y: auto;
+        padding: 32px 28px; display: flex; flex-direction: column;
+        flex: 1; overflow-y: auto;
       }
-      .viewer-category {
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 8px;
+      .viewer-category { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+      .viewer-name { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; line-height: 1.2; color: var(--black); margin-bottom: 10px; }
+      .viewer-id { font-family: "Courier New", monospace; font-size: 0.8rem; color: var(--gray-400); background: var(--gray-100); display: inline-block; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
+      .viewer-price { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--black); margin-bottom: 20px; }
+      .viewer-sizes-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-600); margin-bottom: 8px; }
+      .viewer-sizes { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
+      .viewer-size-pill { background: var(--cream); border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm); font-size: 0.82rem; font-weight: 600; padding: 5px 13px; color: var(--black); }
+      .viewer-img-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-600); margin-bottom: 10px; }
+
+      /* Dot nav in info panel (alternative) */
+      .viewer-dots { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px; }
+      .viewer-dot {
+        width: 8px; height: 8px; border-radius: 50%;
+        background: var(--gray-200); border: none; cursor: pointer;
+        transition: background 0.18s, transform 0.18s; padding: 0;
       }
-      .viewer-name {
-        font-family: var(--font-display);
-        font-size: 1.8rem;
-        font-weight: 700;
-        line-height: 1.2;
-        color: var(--black);
-        margin-bottom: 10px;
-      }
-      .viewer-id {
-        font-family: "Courier New", monospace;
-        font-size: 0.8rem;
-        color: var(--gray-400);
-        background: var(--gray-100);
-        display: inline-block;
-        padding: 4px 10px;
-        border-radius: 4px;
-        margin-bottom: 24px;
-      }
-      .viewer-sizes-label {
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: var(--gray-600);
-        margin-bottom: 8px;
-      }
-      .viewer-sizes {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-bottom: 32px;
-      }
-      .viewer-size-pill {
-        background: var(--cream);
-        border: 1.5px solid var(--gray-200);
-        border-radius: var(--radius-sm);
-        font-size: 0.82rem;
-        font-weight: 600;
-        padding: 5px 13px;
-        color: var(--black);
-      }
+      .viewer-dot.active { background: var(--gold); transform: scale(1.3); }
+
       .viewer-copy-btn {
-        background: var(--black);
-        color: var(--white);
-        border: none;
-        border-radius: var(--radius-sm);
-        padding: 14px 20px;
-        font-family: var(--font-body);
-        font-size: 0.84rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.18s;
-        letter-spacing: 0.5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
+        background: var(--black); color: var(--white); border: none;
+        border-radius: var(--radius-sm); padding: 14px 20px;
+        font-family: var(--font-body); font-size: 0.84rem; font-weight: 600;
+        cursor: pointer; transition: all 0.18s; letter-spacing: 0.5px;
+        display: flex; align-items: center; justify-content: center; gap: 8px;
         margin-top: auto;
       }
-      .viewer-copy-btn:hover {
-        background: var(--gold);
-        color: var(--black);
-      }
-      .viewer-copy-btn.copied {
-        background: var(--success);
-        color: white;
-      }
+      .viewer-copy-btn:hover { background: var(--gold); color: var(--black); }
+      .viewer-copy-btn.copied { background: var(--success); color: white; }
 
       /* SKELETON */
-      .skeleton-card {
-        background: var(--white);
-        border-radius: var(--radius);
-        overflow: hidden;
-        box-shadow: var(--shadow);
-      }
-      .skeleton {
-        background: linear-gradient(
-          90deg,
-          var(--gray-100) 25%,
-          var(--gray-200) 50%,
-          var(--gray-100) 75%
-        );
-        background-size: 200% 100%;
-        animation: shimmer 1.4s infinite;
-      }
-      @keyframes shimmer {
-        0% {
-          background-position: 200% 0;
-        }
-        100% {
-          background-position: -200% 0;
-        }
-      }
+      .skeleton-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+      .skeleton { background: linear-gradient(90deg, var(--gray-100) 25%, var(--gray-200) 50%, var(--gray-100) 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
+      @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
       /* EMPTY */
-      .empty-state {
-        grid-column: 1/-1;
-        text-align: center;
-        padding: 80px 20px;
-        color: var(--gray-400);
-      }
-      .empty-state .icon {
-        font-size: 3rem;
-        margin-bottom: 14px;
-      }
-      .empty-state h3 {
-        font-family: var(--font-display);
-        font-size: 1.4rem;
-        color: var(--black);
-        margin-bottom: 8px;
-      }
-      .empty-state p {
-        font-size: 0.85rem;
-      }
+      .empty-state { grid-column: 1/-1; text-align: center; padding: 80px 20px; color: var(--gray-400); }
+      .empty-state .icon { font-size: 3rem; margin-bottom: 14px; }
+      .empty-state h3 { font-family: var(--font-display); font-size: 1.4rem; color: var(--black); margin-bottom: 8px; }
+      .empty-state p { font-size: 0.85rem; }
 
       /* TOAST */
-      .toast-container {
-        position: fixed;
-        bottom: 24px;
-        right: 24px;
-        z-index: 999;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-      .toast {
-        background: var(--black);
-        color: var(--white);
-        padding: 11px 18px;
-        border-radius: var(--radius-sm);
-        font-size: 0.82rem;
-        box-shadow: var(--shadow-md);
-        border-left: 3px solid var(--gold);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        opacity: 0;
-        transform: translateX(20px);
-        transition: all 0.3s;
-        max-width: 300px;
-      }
-      .toast.show {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      .toast.success {
-        border-left-color: var(--success);
-      }
+      .toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; flex-direction: column; gap: 8px; }
+      .toast { background: var(--black); color: var(--white); padding: 11px 18px; border-radius: var(--radius-sm); font-size: 0.82rem; box-shadow: var(--shadow-md); border-left: 3px solid var(--gold); display: flex; align-items: center; gap: 8px; opacity: 0; transform: translateX(20px); transition: all 0.3s; max-width: 300px; }
+      .toast.show { opacity: 1; transform: translateX(0); }
+      .toast.success { border-left-color: var(--success); }
 
       /* RESPONSIVE */
       @media (max-width: 700px) {
-        header {
-          padding: 0 16px;
-        }
-        .main {
-          padding: 20px 14px;
-        }
-        .products-grid {
-          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-          gap: 14px;
-        }
-        .card-img,
-        .card-img-placeholder {
-          height: 170px;
-        }
-        .viewer-box {
-          flex-direction: column;
-          max-height: 95vh;
-        }
-        .viewer-img {
-          width: 100%;
-          height: 250px;
-        }
-        .viewer-info {
-          padding: 20px;
-        }
-        .viewer-name {
-          font-size: 1.3rem;
-        }
+        header { padding: 0 16px; }
+        .main { padding: 20px 14px; }
+        .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+        .card-gallery { height: 170px; }
+        .viewer-box { flex-direction: column; max-height: 96vh; width: 100%; border-radius: var(--radius) var(--radius) 0 0; align-self: flex-end; }
+        .viewer-gallery { width: 100%; height: 280px; flex-shrink: 0; }
+        .viewer-thumbs { display: none; }
+        .viewer-info { padding: 20px; }
+        .viewer-name { font-size: 1.3rem; }
+        .viewer-overlay { align-items: flex-end; padding: 0; }
+        .viewer-box { border-radius: 16px 16px 0 0; }
       }
     </style>
   </head>
@@ -556,167 +289,60 @@
     <div class="main">
       <div class="toolbar">
         <div class="search-wrap">
-          <svg
-            width="16"
-            height="16"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <path d="M21 21l-4.35-4.35" />
-          </svg>
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Search by product name or ID..."
-            oninput="onSearch(this.value)"
-          />
-          <button class="search-clear" id="searchClear" onclick="clearSearch()">
-            x
-          </button>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="searchInput" placeholder="Search by product name or ID..." oninput="onSearch(this.value)"/>
+          <button class="search-clear" id="searchClear" onclick="clearSearch()">&#x2715;</button>
         </div>
         <div class="filter-bar" id="filterBar">
-          <button class="filter-chip active" onclick="setFilter('All', this)">
-            All
-          </button>
-          <button class="filter-chip" onclick="setFilter('Panjabi', this)">
-            Panjabi
-          </button>
-          <button class="filter-chip" onclick="setFilter('Shirt', this)">
-            Shirt
-          </button>
-          <button class="filter-chip" onclick="setFilter('T-shirt', this)">
-            T-shirt
-          </button>
-          <button class="filter-chip" onclick="setFilter('Pant', this)">
-            Pant
-          </button>
-          <button class="filter-chip" onclick="setFilter('Polo Shirt', this)">
-            Polo Shirt
-          </button>
+          <button class="filter-chip active" onclick="setFilter('All',this)">All</button>
+          <button class="filter-chip" onclick="setFilter('Panjabi',this)">Panjabi</button>
+          <button class="filter-chip" onclick="setFilter('Shirt',this)">Shirt</button>
+          <button class="filter-chip" onclick="setFilter('T-shirt',this)">T-shirt</button>
+          <button class="filter-chip" onclick="setFilter('Pant',this)">Pant</button>
+          <button class="filter-chip" onclick="setFilter('Polo Shirt',this)">Polo Shirt</button>
         </div>
       </div>
 
       <div class="products-grid" id="productsGrid">
-        <div class="skeleton-card">
-          <div class="skeleton" style="height: 210px"></div>
-          <div
-            style="
-              padding: 14px;
-              display: flex;
-              flex-direction: column;
-              gap: 8px;
-            "
-          >
-            <div
-              class="skeleton"
-              style="height: 10px; width: 50%; border-radius: 4px"
-            ></div>
-            <div
-              class="skeleton"
-              style="height: 16px; width: 80%; border-radius: 4px"
-            ></div>
-            <div
-              class="skeleton"
-              style="height: 34px; border-radius: 6px; margin-top: 4px"
-            ></div>
-          </div>
-        </div>
-        <div class="skeleton-card">
-          <div class="skeleton" style="height: 210px"></div>
-          <div
-            style="
-              padding: 14px;
-              display: flex;
-              flex-direction: column;
-              gap: 8px;
-            "
-          >
-            <div
-              class="skeleton"
-              style="height: 10px; width: 50%; border-radius: 4px"
-            ></div>
-            <div
-              class="skeleton"
-              style="height: 16px; width: 80%; border-radius: 4px"
-            ></div>
-            <div
-              class="skeleton"
-              style="height: 34px; border-radius: 6px; margin-top: 4px"
-            ></div>
-          </div>
-        </div>
-        <div class="skeleton-card">
-          <div class="skeleton" style="height: 210px"></div>
-          <div
-            style="
-              padding: 14px;
-              display: flex;
-              flex-direction: column;
-              gap: 8px;
-            "
-          >
-            <div
-              class="skeleton"
-              style="height: 10px; width: 50%; border-radius: 4px"
-            ></div>
-            <div
-              class="skeleton"
-              style="height: 16px; width: 80%; border-radius: 4px"
-            ></div>
-            <div
-              class="skeleton"
-              style="height: 34px; border-radius: 6px; margin-top: 4px"
-            ></div>
-          </div>
-        </div>
-        <div class="skeleton-card">
-          <div class="skeleton" style="height: 210px"></div>
-          <div
-            style="
-              padding: 14px;
-              display: flex;
-              flex-direction: column;
-              gap: 8px;
-            "
-          >
-            <div
-              class="skeleton"
-              style="height: 10px; width: 50%; border-radius: 4px"
-            ></div>
-            <div
-              class="skeleton"
-              style="height: 16px; width: 80%; border-radius: 4px"
-            ></div>
-            <div
-              class="skeleton"
-              style="height: 34px; border-radius: 6px; margin-top: 4px"
-            ></div>
-          </div>
-        </div>
+        <!-- skeletons -->
+        ${[1,2,3,4].map(()=>`<div class="skeleton-card"><div class="skeleton" style="height:210px"></div><div style="padding:14px;display:flex;flex-direction:column;gap:8px"><div class="skeleton" style="height:10px;width:50%;border-radius:4px"></div><div class="skeleton" style="height:16px;width:80%;border-radius:4px"></div><div class="skeleton" style="height:34px;border-radius:6px;margin-top:4px"></div></div></div>`).join("")}
       </div>
     </div>
 
-    <!-- IMAGE VIEWER -->
-    <div
-      class="viewer-overlay"
-      id="viewerOverlay"
-      onclick="overlayClick(event)"
-    >
-      <button class="viewer-close" onclick="closeViewer()">x</button>
+    <!-- ═══════════════════════════
+         IMAGE VIEWER — multi-photo
+    ═══════════════════════════ -->
+    <div class="viewer-overlay" id="viewerOverlay" onclick="overlayClick(event)">
+      <button class="viewer-close" onclick="closeViewer()" title="Close (Esc)">&#x2715;</button>
+
       <div class="viewer-box">
-        <img class="viewer-img" id="viewerImg" src="" alt="" />
+
+        <!-- LEFT: gallery -->
+        <div class="viewer-gallery" id="viewerGallery">
+          <div class="viewer-main-img-wrap" id="viewerMainWrap">
+            <img class="viewer-main-img" id="viewerMainImg" src="" alt="" />
+            <button class="viewer-arr viewer-arr-prev" id="viewerPrev" onclick="viewerStep(-1)" title="Previous">&#8249;</button>
+            <button class="viewer-arr viewer-arr-next" id="viewerNext" onclick="viewerStep(1)" title="Next">&#8250;</button>
+            <div class="viewer-img-counter" id="viewerCounter"></div>
+          </div>
+          <div class="viewer-thumbs" id="viewerThumbs"></div>
+        </div>
+
+        <!-- RIGHT: info -->
         <div class="viewer-info">
           <div class="viewer-category" id="viewerCategory"></div>
           <div class="viewer-name" id="viewerName"></div>
           <div class="viewer-id" id="viewerId"></div>
+          <div class="viewer-price" id="viewerPrice" style="display:none"></div>
+
           <div class="viewer-sizes-label">Available Sizes</div>
           <div class="viewer-sizes" id="viewerSizes"></div>
-          <button class="viewer-copy-btn" id="viewerCopyBtn">
-            Copy Product Info
-          </button>
+
+          <!-- Dot indicators (visible on mobile & always) -->
+          <div class="viewer-img-label" id="viewerImgLabel" style="display:none">Photos</div>
+          <div class="viewer-dots" id="viewerDots"></div>
+
+          <button class="viewer-copy-btn" id="viewerCopyBtn">&#128203; Copy Product Info</button>
         </div>
       </div>
     </div>
@@ -725,13 +351,7 @@
 
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-      import {
-        getFirestore,
-        collection,
-        getDocs,
-        query,
-        orderBy,
-      } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+      import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
       const cfg = {
         apiKey: "AIzaSyD2xtZZ9viQOxjmnYpzQhtjYne5l82FM3Y",
@@ -747,180 +367,258 @@
       let all = [];
       let activeFilter = "All";
       let searchQ = "";
-      let selectedProduct = null;
+
+      // Viewer state
+      let viewerImgs = [];
+      let viewerIdx = 0;
+
+      // ── Card gallery state (per-card index) ──
+      const cardGalIdx = {};
 
       async function load() {
         try {
-          const snap = await getDocs(
-            query(
-              collection(db, "catalogProducts"),
-              orderBy("createdAt", "desc"),
-            ),
-          );
-
-          all = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+          const snap = await getDocs(query(collection(db,"catalogProducts"), orderBy("createdAt","desc")));
+          all = snap.docs.map(d => ({ id: d.id, ...d.data() }));
           render();
-        } catch (e) {
+        } catch(e) {
           document.getElementById("productsGrid").innerHTML =
-            '<div class="empty-state"><div class="icon">⚠</div><h3>Could not load</h3><p>' +
-            e.message +
-            "</p></div>";
+            '<div class="empty-state"><div class="icon">&#9888;</div><h3>Could not load</h3><p>'+e.message+'</p></div>';
         }
       }
 
+      // Get image array for a product (supports both formats)
+      function getImgs(p) {
+        if (Array.isArray(p.images) && p.images.length) return p.images;
+        if (p.imageURL) return [p.imageURL];
+        return [];
+      }
+
       function render() {
-        const filtered = all.filter((p) => {
+        const filtered = all.filter(p => {
           const q = searchQ.toLowerCase();
-          const matchSearch =
-            !q ||
-            (p.productName || "").toLowerCase().includes(q) ||
-            (p.productId || "").toLowerCase().includes(q);
-
-          const matchFilter =
-            activeFilter === "All" || p.category === activeFilter;
-
+          const matchSearch = !q || (p.productName||"").toLowerCase().includes(q) || (p.productId||"").toLowerCase().includes(q);
+          const matchFilter = activeFilter === "All" || p.category === activeFilter;
           return matchSearch && matchFilter;
         });
 
         const hc = document.getElementById("headerCount");
-        hc.innerHTML =
-          "<span>" +
-          filtered.length +
-          "</span> product" +
-          (filtered.length !== 1 ? "s" : "");
+        hc.innerHTML = "<span>"+filtered.length+"</span> product"+(filtered.length!==1?"s":"");
 
         const grid = document.getElementById("productsGrid");
-
         if (!filtered.length) {
-          grid.innerHTML =
-            '<div class="empty-state"><div class="icon">🔍</div><h3>No products found</h3><p>Try another search.</p></div>';
+          grid.innerHTML = '<div class="empty-state"><div class="icon">&#128269;</div><h3>No products found</h3><p>Try another search.</p></div>';
           return;
         }
 
-        grid.innerHTML = filtered
-          .map((p, i) => {
-            const index = all.indexOf(p);
+        grid.innerHTML = filtered.map((p, i) => {
+          const idx = all.indexOf(p);
+          const imgs = getImgs(p);
+          const hasMany = imgs.length > 1;
 
-            return `
-      <div class="product-card" style="animation-delay:${i * 0.04}s" onclick="openViewer(${index})">
-        
-        <div class="card-img-wrap">
-          ${
-            p.imageURL
-              ? `<img class="card-img" src="${p.imageURL}" loading="lazy">`
-              : `<div class="card-img-placeholder">📦</div>`
-          }
-        </div>
+          // Gallery slides
+          const slides = imgs.length
+            ? imgs.map(url => `<div class="card-gallery-slide"><img src="${url}" loading="lazy" alt="${p.productName||""}"></div>`).join("")
+            : `<div class="card-gallery-slide"><div class="card-gallery-placeholder">&#128230;</div></div>`;
 
-        <div class="card-body">
-          <div class="card-category">${p.category || ""}</div>
-          <div class="card-name">${p.productName || "No name"}</div>
-          <div class="card-id">#${p.productId || ""}</div>
+          const dots = hasMany
+            ? `<div class="card-dots" id="cdots-${idx}">${imgs.map((_,di)=>`<button class="card-dot ${di===0?"active":""}" onclick="event.stopPropagation();cardGalNav(${idx},${di})"></button>`).join("")}</div>`
+            : "";
 
-          <div class="card-sizes">
-            ${(p.sizes || [])
-              .map((s) => `<span class="size-pill">${s}</span>`)
-              .join("")}
-          </div>
+          const countBadge = hasMany
+            ? `<div class="card-img-count"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>${imgs.length}</div>`
+            : "";
 
-          <button class="copy-btn" onclick="event.stopPropagation();doCopy(${index}, this)">
-            Copy Product Info
-          </button>
-        </div>
-      </div>`;
-          })
-          .join("");
+          const priceHtml = p.price ? `<div class="card-price">&#8364;${Number(p.price).toLocaleString()}</div>` : "";
+
+          return `
+          <div class="product-card" style="animation-delay:${i*0.04}s" onclick="openViewer(${idx})">
+            <div class="card-gallery" id="cgal-${idx}">
+              <div class="card-gallery-track" id="cgaltrack-${idx}">${slides}</div>
+              ${dots}
+              ${countBadge}
+            </div>
+            <div class="card-body">
+              <div class="card-category">${p.category||""}</div>
+              <div class="card-name">${p.productName||"No name"}</div>
+              <div class="card-id">#${p.productId||""}</div>
+              ${priceHtml}
+              <div class="card-sizes">${(p.sizes||[]).map(s=>`<span class="size-pill">${s}</span>`).join("")}</div>
+              <button class="copy-btn" onclick="event.stopPropagation();doCopy(${idx},this)">&#128203; Copy Info</button>
+            </div>
+          </div>`;
+        }).join("");
       }
 
-      window.openViewer = function (index) {
+      // ── Card gallery navigation ──
+      window.cardGalNav = function(pid, idx) {
+        cardGalIdx[pid] = idx;
+        const track = document.getElementById("cgaltrack-"+pid);
+        if(track) track.style.transform = `translateX(-${idx*100}%)`;
+        const dotsEl = document.getElementById("cdots-"+pid);
+        if(dotsEl) dotsEl.querySelectorAll(".card-dot").forEach((d,i)=>d.classList.toggle("active",i===idx));
+      };
+
+      // ── VIEWER ──
+      window.openViewer = function(index) {
         const p = all[index];
-        selectedProduct = p;
+        viewerImgs = getImgs(p);
+        viewerIdx = 0;
 
-        document.getElementById("viewerImg").src = p.imageURL || "";
-        document.getElementById("viewerCategory").textContent =
-          p.category || "";
-        document.getElementById("viewerName").textContent = p.productName || "";
-        document.getElementById("viewerId").textContent =
-          "#" + (p.productId || "");
+        // Populate info
+        document.getElementById("viewerCategory").textContent = p.category||"";
+        document.getElementById("viewerName").textContent = p.productName||"";
+        document.getElementById("viewerId").textContent = "#"+(p.productId||"");
 
-        document.getElementById("viewerSizes").innerHTML = (p.sizes || [])
-          .map((s) => `<span class="viewer-size-pill">${s}</span>`)
-          .join("");
+        const priceEl = document.getElementById("viewerPrice");
+        if(p.price) { priceEl.textContent = "€"+Number(p.price).toLocaleString(); priceEl.style.display="block"; }
+        else priceEl.style.display="none";
 
+        document.getElementById("viewerSizes").innerHTML = (p.sizes||[]).map(s=>`<span class="viewer-size-pill">${s}</span>`).join("");
+
+        // Thumbnails
+        const thumbsEl = document.getElementById("viewerThumbs");
+        thumbsEl.innerHTML = viewerImgs.map((url,i)=>
+          `<div class="viewer-thumb ${i===0?"active":""}" id="vthumb-${i}" onclick="viewerGoTo(${i})"><img src="${url}" alt="photo ${i+1}" loading="lazy"></div>`
+        ).join("");
+
+        // Dots in info panel
+        const dotsEl = document.getElementById("viewerDots");
+        const imgLabel = document.getElementById("viewerImgLabel");
+        if(viewerImgs.length > 1) {
+          imgLabel.style.display = "block";
+          dotsEl.innerHTML = viewerImgs.map((_,i)=>
+            `<button class="viewer-dot ${i===0?"active":""}" id="vdot-${i}" onclick="viewerGoTo(${i})"></button>`
+          ).join("");
+        } else {
+          imgLabel.style.display = "none";
+          dotsEl.innerHTML = "";
+        }
+
+        // Arrows
+        updateViewerArrows();
+
+        // Copy button
         const btn = document.getElementById("viewerCopyBtn");
         btn.classList.remove("copied");
-        btn.textContent = "Copy Product Info";
+        btn.innerHTML = "&#128203; Copy Product Info";
+        btn.onclick = () => doCopy(index, btn);
 
-        btn.onclick = function () {
-          doCopy(index, btn);
-        };
+        // Set initial image
+        setViewerImg(0, false);
 
         document.getElementById("viewerOverlay").classList.add("open");
         document.body.style.overflow = "hidden";
       };
 
-      window.closeViewer = function () {
+      function setViewerImg(idx, animate=true) {
+        viewerIdx = idx;
+        const img = document.getElementById("viewerMainImg");
+
+        if(animate) {
+          img.classList.add("switching");
+          setTimeout(() => {
+            img.src = viewerImgs[idx] || "";
+            img.classList.remove("switching");
+          }, 150);
+        } else {
+          img.src = viewerImgs[idx] || "";
+        }
+
+        // Update counter
+        document.getElementById("viewerCounter").textContent =
+          viewerImgs.length > 1 ? `${idx+1} / ${viewerImgs.length}` : "";
+
+        // Update thumbs
+        document.querySelectorAll(".viewer-thumb").forEach((t,i) => t.classList.toggle("active", i===idx));
+        // Scroll active thumb into view
+        const activeThumb = document.getElementById("vthumb-"+idx);
+        if(activeThumb) activeThumb.scrollIntoView({ behavior:"smooth", block:"nearest", inline:"center" });
+
+        // Update dots
+        document.querySelectorAll(".viewer-dot").forEach((d,i) => d.classList.toggle("active", i===idx));
+
+        updateViewerArrows();
+      }
+
+      function updateViewerArrows() {
+        const prev = document.getElementById("viewerPrev");
+        const next = document.getElementById("viewerNext");
+        if(viewerImgs.length <= 1) { prev.hidden = true; next.hidden = true; return; }
+        prev.hidden = false; next.hidden = false;
+        prev.style.opacity = viewerIdx === 0 ? "0.35" : "1";
+        next.style.opacity = viewerIdx === viewerImgs.length-1 ? "0.35" : "1";
+      }
+
+      window.viewerGoTo = function(idx) {
+        if(idx < 0 || idx >= viewerImgs.length) return;
+        setViewerImg(idx);
+      };
+
+      window.viewerStep = function(dir) {
+        const next = viewerIdx + dir;
+        if(next < 0 || next >= viewerImgs.length) return;
+        setViewerImg(next);
+      };
+
+      window.closeViewer = function() {
         document.getElementById("viewerOverlay").classList.remove("open");
         document.body.style.overflow = "";
       };
 
-      window.overlayClick = function (e) {
-        if (e.target.id === "viewerOverlay") closeViewer();
+      window.overlayClick = function(e) {
+        if(e.target.id === "viewerOverlay") closeViewer();
       };
 
-      window.doCopy = function (index, btn) {
-        const p = all[index];
+      // ── Keyboard navigation ──
+      document.addEventListener("keydown", e => {
+        if(!document.getElementById("viewerOverlay").classList.contains("open")) return;
+        if(e.key === "Escape") closeViewer();
+        if(e.key === "ArrowLeft") viewerStep(-1);
+        if(e.key === "ArrowRight") viewerStep(1);
+      });
 
-        const txt =
-          "Product: " +
-          p.productName +
-          "\nID: " +
-          p.productId +
-          "\nCategory: " +
-          p.category +
-          "\nSizes: " +
-          (p.sizes || []).join(", ");
+      // ── Touch swipe on viewer ──
+      let touchStartX = 0;
+      document.getElementById("viewerMainWrap")?.addEventListener("touchstart", e => { touchStartX = e.touches[0].clientX; }, { passive:true });
+      document.getElementById("viewerMainWrap")?.addEventListener("touchend", e => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if(Math.abs(dx) > 50) viewerStep(dx < 0 ? 1 : -1);
+      });
+
+      // ── Copy ──
+      window.doCopy = function(index, btn) {
+        const p = all[index];
+        const imgs = getImgs(p);
+        const priceLine = p.price ? "\nPrice: EUR "+Number(p.price).toLocaleString() : "";
+        const imgLine = imgs.length > 1 ? "\nPhotos: "+imgs.length : "";
+        const txt = "Product: "+p.productName+"\nID: "+p.productId+"\nCategory: "+p.category+priceLine+imgLine+"\nSizes: "+(p.sizes||[]).join(", ");
 
         navigator.clipboard.writeText(txt).then(() => {
-          btn.textContent = "Copied!";
+          const prev = btn.innerHTML;
+          btn.innerHTML = "&#10003; Copied!";
           btn.classList.add("copied");
-
-          setTimeout(() => {
-            btn.textContent = "Copy Product Info";
-            btn.classList.remove("copied");
-          }, 2000);
+          setTimeout(() => { btn.innerHTML = prev; btn.classList.remove("copied"); }, 2000);
         });
       };
 
-      window.onSearch = function (v) {
+      // ── Search & Filter ──
+      window.onSearch = function(v) {
         searchQ = v;
-        document
-          .getElementById("searchClear")
-          .classList.toggle("visible", v.length > 0);
+        document.getElementById("searchClear").classList.toggle("visible", v.length > 0);
         render();
       };
-
-      window.clearSearch = function () {
+      window.clearSearch = function() {
         document.getElementById("searchInput").value = "";
         searchQ = "";
         document.getElementById("searchClear").classList.remove("visible");
         render();
       };
-
-      window.setFilter = function (cat, btn) {
+      window.setFilter = function(cat, btn) {
         activeFilter = cat;
-
-        document
-          .querySelectorAll(".filter-chip")
-          .forEach((b) => b.classList.remove("active"));
-
+        document.querySelectorAll(".filter-chip").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         render();
       };
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeViewer();
-      });
 
       load();
     </script>
